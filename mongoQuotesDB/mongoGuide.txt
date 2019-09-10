@@ -1,0 +1,10 @@
+in Linux:
+mongo "mongodb+srv://timeseries-8gj6s.mongodb.net/test" --username jamesAdmin
+
+username: jamesAdmin
+password: test
+
+use myTimeSeries
+show collections
+
+my mongo account: j*aw*****2*2**g****.*** , z**9****bang
