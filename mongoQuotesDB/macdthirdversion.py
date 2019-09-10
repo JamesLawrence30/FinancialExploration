@@ -27,23 +27,16 @@ def populateMongo(timeSeries):
         if(float(row[3]) >= 0.05):
             print(row[3]);
 
-    ####POSSIBLY A RECURSIVE FUNCTION TO GO FROM timeseries.find("{") to timeseries.find("}")
-    ######then call function recursively starting at position of timeseries.find("}") to begin looking for exact start of next entry
-    #######each entry is send to an .insertOne()
-
-    #this needs to connect to mongodb
-    #for every day in response body, add the data to collection timeSeries
-    #wil then be able to filter for the close prices from each day's data
-    ###each day is a "file"?? in the collection
+    ####script to some mongoDB api to send data to noSQL db en masse for safe keeping / use later in an operation
+    #### this will be a .insertMany() since many time series entreis added
 
 
 def main():
     timeSeries = makeRequest("MSFT"); #structure api call by passing in a ticker symbol
     #evenrually pull hidden secret api key from another file that won't go on git.
         
-    populateMongo(timeSeries); #populate mongodb with all time series data as of today...
-    ####eventually want to drop today and populate today's close data at midnight  after close
-    ##!!!!!!!! or just use the opening price at 9:35am each day
+    populateMongo(timeSeries); #populate mongodb with all time series data
+    ####eventually want to manipulate realtie data and execute trades based on intraday market technicals
 
 
 #Tell python to call main function first
